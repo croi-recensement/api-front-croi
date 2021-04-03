@@ -5,7 +5,7 @@ const Tabligh = props =>{
     return(
         <div className="container">
             <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
                             <p className="">1- Quel est le prophète le plus cité dans le coran ?</p>
@@ -24,7 +24,7 @@ const Tabligh = props =>{
                         </div>
                     </div>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
                             <p className="">6- Combien y-a-t-il de mois sacrés dans le calendrier islamique ?</p>
@@ -46,7 +46,7 @@ const Tabligh = props =>{
             </div>
             <div></div>
             <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
                             <p className="">2- Quels sont les mois sacrés ?</p>
@@ -65,7 +65,7 @@ const Tabligh = props =>{
                         </div>
                     </div>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
                             <p className="">7- Quelle est la seule sourate qui ne commence pas par la formule de « Basmala » ?</p>
@@ -86,7 +86,7 @@ const Tabligh = props =>{
                 </div>
             </div>
             <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
                             <p className="">3- Comment s’appelle le peuple qui a accueilli le prophète ﷺ à Médine suite à son départ de la Mecque ?</p>
@@ -102,7 +102,7 @@ const Tabligh = props =>{
                         </div>
                     </div>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
                             <p className="">8- Les anges sont faits </p>
@@ -120,7 +120,7 @@ const Tabligh = props =>{
                 </div>
             </div>
             <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
                             <p className="">4- D’après le prophète ﷺ, quel est le meilleure don qu'Allah a offert à l’Homme ?</p>
@@ -139,7 +139,7 @@ const Tabligh = props =>{
                         </div>
                     </div>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
                             <p className="">9- Lors du Hajj- pèlerinage- à quel endroit le pèlerin doit-il obligatoirement passer plusieurs nuits ? </p>
@@ -160,7 +160,7 @@ const Tabligh = props =>{
                 </div>
             </div>
             <div className="row">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
                             <p className="">5- Lors du voyage nocturne du prophète ﷺ aux cieux, combien de prières ont été initialement prescrites aux musulmans ?</p>
@@ -179,7 +179,7 @@ const Tabligh = props =>{
                         </div>
                     </div>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
                             <p className="">10- Quel est le seul compagnon dont le nom est cité dans le Coran ? </p>

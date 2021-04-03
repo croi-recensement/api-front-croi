@@ -27,6 +27,12 @@
   .MuiButton-root{
     font-size: 12px !important;
   }
+  .MuiTypography-body1 {
+    font-size: 10px !important;
+  }
+  legend.w-auto.px-2{
+    font-size: 10px !important;
+  }
 }
 
 .App-header {
