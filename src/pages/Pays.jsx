@@ -46,7 +46,7 @@ const Pays = props =>{
                 </div>
                 <div className="col-md-3">
                     <div className="form-group">
-                        <label>Provaince</label>
+                        <label>Province</label>
                         <select className="form-control" onChange={handleChangeProv}>
                             <option value="">Selectionner un province</option>
                             {provinces.map((itemsProv, key) => {

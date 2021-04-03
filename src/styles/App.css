@@ -21,6 +21,9 @@
   .MuiPaper-root.MuiStepper-root.MuiStepper-horizontal.MuiStepper-alternativeLabel.MuiPaper-elevation0{
     display: none;
   }
+  .react-tel-input .form-control{
+    width: 235px;
+  }
 }
 
 .App-header {
