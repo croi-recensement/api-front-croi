@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
+import Pays from './Pays';
 
 const Logement = props =>{
+
     const [errorMessageEmail, setErrorMessageEmail] = useState('');
-    const [pays, setPays] = useState('');
-    const [region, setRegion] = useState('');
 
     const checkEmail = (email) =>{
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -18,13 +17,10 @@ const Logement = props =>{
         }else{
             setErrorMessageEmail('Adresse e-mail non valide');
         }
-        setPays(index);
     }
 
-    
     return(
             <>
-            <legend className="text-center mb-5">{props.title}</legend>
             <div className="row">
                 <div className="col-md-4">
                     <div className="form-group">
@@ -105,27 +101,7 @@ const Logement = props =>{
                     </div>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-md-4">
-                    <div className="form-group">
-                        <label>Pays</label>
-                        <CountryDropdown
-                            value={pays}
-                            onChange={(e) => handleChange(e.target.value)}
-                            className="form-control" />
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="form-group">
-                        <label>Provaince</label>
-                        <RegionDropdown
-                            country="Madagascar"
-                            value={region}
-                            onChange={(e) => handleChange(e.target.value)}
-                            className="form-control" />
-                    </div>
-                </div>
-            </div>
+            <Pays />
         </>
     );
 }

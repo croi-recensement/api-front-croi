@@ -4,7 +4,6 @@ const Commerce = props =>{
     
     return(
             <>
-            <legend className="text-center mb-5">{props.title}</legend>
             <div className="row">
                 <div className="col-md-3">
                     <div className="form-group">
@@ -43,7 +42,7 @@ const Commerce = props =>{
                 <div className="col-md-12">
                     <div className="form-group">
                         <fieldset className="form-group border p-3">
-                        <legend class="w-auto px-2">Vous êtes ?</legend>
+                        <legend class="w-auto px-2" style={{fontSize: '16px'}}>Vous êtes ?</legend>
                         <div className="row">
                             <div className="col-md-2">
                                 <div class="form-check">

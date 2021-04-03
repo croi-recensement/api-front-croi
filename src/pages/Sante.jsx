@@ -5,7 +5,6 @@ const Sante = props =>{
     
     return(
             <>
-            <legend className="text-center mb-5">{props.title}</legend>
             <div className="row">
                 <div className="col-md-4">
                     <div className="form-group">
@@ -62,7 +61,7 @@ const Sante = props =>{
                 <div className="col-md-6">
                     <div className="form-group">
                         <fieldset className="form-group border p-3">
-                            <legend class="w-auto px-2">Vous avez subit une chirurgie ?</legend>
+                            <legend class="w-auto px-2" style={{fontSize: '16px'}}>Vous avez subit une chirurgie ?</legend>
                             <div className="row d-flex justify-content-around">
                                 <div className="col-md-2">
                                     <div className="form-check">
@@ -87,7 +86,7 @@ const Sante = props =>{
                 <div className="col-md-6">
                     <div className="form-group">
                         <fieldset className="form-group border p-3">
-                            <legend className="w-auto px-2">Vous êtes évacué par ce maladie ?</legend>
+                            <legend className="w-auto px-2" style={{fontSize: '16px'}}>Vous êtes évacué par ce maladie ?</legend>
                             <div className="row d-flex justify-content-around">
                                 <div className="col-md-2">
                                     <div className="form-check">
@@ -110,6 +109,7 @@ const Sante = props =>{
                     </div>
                 </div>
             </div>
+            <Pays />
         </>
     );
 }

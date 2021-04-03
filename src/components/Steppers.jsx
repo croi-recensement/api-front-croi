@@ -6,7 +6,7 @@ import StepLabel from '@material-ui/core/StepLabel';
 
 const useStyles = makeStyles(theme => ({
     root: {
-      width: '90%',
+      width: '100%',
     },
     backButton: {
       marginRight: theme.spacing(1),
@@ -24,14 +24,18 @@ const Steppers =(props) => {
 
     return(
         <>
-        <div className={classes.root}>
-            <Stepper activeStep={props.activeStep} alternativeLabel>
-                {steps.map(label => (
-                    <Step key={label}>
-                        <StepLabel>{label}</StepLabel>
-                    </Step>
-                ))}
-            </Stepper>
+        <div className="row">
+            <div className="col-md-12 col-sm-12 ">
+                <div className={classes.root}>
+                    <Stepper activeStep={props.activeStep} alternativeLabel>
+                        {steps.map(label => (
+                            <Step key={label}>
+                                <StepLabel>{label}</StepLabel>
+                            </Step>
+                        ))}
+                    </Stepper>
+                </div>
+            </div>
         </div>
         </>
     );

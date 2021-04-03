@@ -12,7 +12,7 @@ import Education from '../pages/Education';
 import Sante from '../pages/Sante';
 import Sport from '../pages/Sport';
 import Social from '../pages/Social';
-import Commerce from '../pages/Commerce';
+import Profession from '../pages/Profession';
 import Tabligh from '../pages/Tabligh';
 import Finished from '../pages/Finished';
 
@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const getSteps = () => {
-    return ['Personne', 'Logement', 'Education', 'Santé', 'Sport', 'Social', 'Commerce', 'Tabligh'];
+    return ['Personne', 'Logement', 'Education', 'Santé', 'Sport', 'Social', 'Profession', 'Tabligh'];
 }
 
 
@@ -82,64 +82,74 @@ const Inscription = (props) =>{
 
         switch (stepIndex) {
           case 0:
-            return <Personne title={"Personne"} handleNext={handleNext}/>
+            return <Personne handleNext={handleNext}/>
           case 1:
-            return <Logement title={"Logement"} handleNext={handleNext}/>
+            return <Logement handleNext={handleNext}/>
           case 2:
-            return <Education title={"Education"} handleNext={handleNext}/>
+            return <Education handleNext={handleNext}/>
           case 3:
-              return <Sante title={"Santé"} />
+              return <Sante />
           case 4:
-              return <Sport title={"Sport"} />
+              return <Sport />
           case 5:
-            return <Social title={"Social"} />
+            return <Social />
           case 6:
-            return <Commerce title={"Commerce"} />
+            return <Profession />
           case 7:
-            return <Tabligh title={"Tabligh"} />
+            return <Tabligh  />
           default:
             return <Finished />
         }
       }
 
+
     return(
           <>
             <div className={classes.root}>
-              <div className="container-fluid mb-5">
+              <div className="container-fluid mb-5 col-md-12 col-xs-6">
                   <Steppers getSteps={getSteps} activeStep={activeStep} />
               </div>
-              <form>
-                  <fieldset>
-                    {activeStep === steps.length ? (
-                      <div>
-                        <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-                        <div className="form-group text-center mt-5">
-                          <Button onClick={handleReset} variant="contained">Reset</Button>
+
+                  <form className="bg-success container-fluid p-5 ">
+                    <fieldset>
+                      {activeStep === steps.length ? (
+                        <div>
+                          <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                          <div className="form-group text-center mt-5">
+                            <Button onClick={handleReset} variant="contained">Reset</Button>
+                          </div>
                         </div>
-                      </div>
-                    ): (
-                      <div>
-                        <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-                        <div className="form-group text-center mt-5">
-                          <Button
-                            disabled={activeStep === 0}
-                            onClick={handleBack}
-                            className={classes.backButton}
-                            variant="contained"
-                            color="primary"
-                          >
-                            Retour
-                          </Button>
-                          <Button variant="contained" color="secondary" onClick={handleNext}>
-                              {activeStep === steps.length - 1 ? 'fini !!!' : 'Etape ' + (activeStep + 1)}
-                              {loading && <CircularProgress size={24} className={classes.buttonProgress} color="secondary"/>}
-                          </Button>
-                          
-                        </div>
-                      </div>
-                    )}
-                  </fieldset>    
-              </form>
+                      ): (
+                          <div>
+                            { steps[activeStep] === 'Tabligh'  ? (
+                                <div>
+                                  <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                                </div>
+                            ): (
+                              <div>
+                                <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                                <div className="form-group text-center mt-5">
+                                  <Button
+                                    disabled={activeStep === 0}
+                                    onClick={handleBack}
+                                    className={classes.backButton}
+                                    variant="contained"
+                                    color="primary"
+                                  >
+                                    Retour
+                                  </Button>
+                                  <Button variant="contained" color="secondary" onClick={handleNext}>
+                                      {activeStep === steps.length - 1 ? 'fini !!!' : 'Etape ' + (activeStep + 1)}
+                                      {loading && <CircularProgress size={24} className={classes.buttonProgress} color="secondary"/>}
+                                  </Button>
+                                  
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                      )}
+                    </fieldset>    
+                  </form>             
             </div>
           </>
     );

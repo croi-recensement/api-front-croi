@@ -5,7 +5,6 @@ const Education = props =>{
     
     return(
             <>
-            <legend className="text-center mb-5">{props.title}</legend>
             <div className="row">
                 <div className="col-md-3">
                     <div className="form-group">

@@ -40,7 +40,6 @@ const Personne = (props) =>{
 
     return(
             <>
-            <legend className="text-center mb-5">{props.title}</legend>
             <div className="row">
                 <div className="col-md-3">
                     <div className="form-group">
@@ -63,7 +62,11 @@ const Personne = (props) =>{
                 <div className="col-md-3">
                     <div className="form-group">
                         <label>Date de Naissance</label>
-                        <DatePicker selected={startDate} onChange={date => setStartDate(date)} className="form-control col-md-12" />
+                        <DatePicker 
+                            selected={startDate} 
+                            onChange={date => setStartDate(date)} 
+                            className="form-control datePicker"
+                        />
                     </div>
                 </div>
             </div>
@@ -114,7 +117,7 @@ const Personne = (props) =>{
                             country={'mg'}
                             value={phone}
                             onChange={handleChange}
-                            className="form-control"
+                            className="form-control phoneInput"
                         />
                     </div>
                 </div>
