@@ -13,6 +13,16 @@
   }
 }
 
+@media screen and (max-width: 600px){
+  .form-group.text-center.mt-5{
+    display: flex;
+    width: '50%';
+  }
+  .MuiPaper-root.MuiStepper-root.MuiStepper-horizontal.MuiStepper-alternativeLabel.MuiPaper-elevation0{
+    display: none;
+  }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

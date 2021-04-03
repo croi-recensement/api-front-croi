@@ -25,7 +25,7 @@ const Steppers =(props) => {
     return(
         <>
         <div className="row">
-            <div className="col-md-12 col-sm-12 ">
+            <div className="col-md-12">
                 <div className={classes.root}>
                     <Stepper activeStep={props.activeStep} alternativeLabel>
                         {steps.map(label => (
