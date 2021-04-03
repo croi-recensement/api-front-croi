@@ -24,6 +24,9 @@
   .react-tel-input .form-control{
     width: 235px;
   }
+  .MuiButton-root{
+    font-size: 12px !important;
+  }
 }
 
 .App-header {

@@ -48,23 +48,23 @@ const Inscription = (props) =>{
     const [activeStep, setActiveStep] = useState(0);
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
-    //const timer = React.useRef();
+    const timer = React.useRef();
 
     useEffect(() => {
       return () => {
-        //clearTimeout(timer.current);
+        clearTimeout(timer.current);
       };
     }, []);
 
     const handleNext = () => {
-      /*if (!loading) {
+      if (!loading) {
         setSuccess(false);
         setLoading(true);
         timer.current = window.setTimeout(() => {
           setSuccess(true);
           setLoading(false);
         }, 2000);
-      }*/
+      }
   
       //if(success)
         setActiveStep(prevActiveStep => prevActiveStep + 1);
