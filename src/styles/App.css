@@ -14,9 +14,14 @@
 }
 
 @media screen and (max-width: 600px){
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-success.position-relative{
+    position: fixed !important;
+    width: 100%;
+    z-index: 1111111111111111111;
+  }
   .form-group.text-center.mt-5{
     display: flex;
-    width: '50%';
+    width: 50%;
   }
   .MuiPaper-root.MuiStepper-root.MuiStepper-horizontal.MuiStepper-alternativeLabel.MuiPaper-elevation0{
     display: none;
