@@ -25,7 +25,7 @@ const Personne = (props) =>{
 
     const handleChange = (index) => {
         //passport
-        if (validator.isPassportNumber(index,'IN')) {
+        if (validator && validator.isPassportNumber(index,'IN')) {
             setErrorMessagePassport('');
         }else{
             setErrorMessagePassport('Is Invalid Passport Number')
