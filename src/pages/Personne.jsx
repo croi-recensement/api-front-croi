@@ -11,7 +11,6 @@ import validator from 'validator';
 
 const Personne = (props) =>{
 
-    const [data, setData] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [valueSexe, setValueSexe] = useState('M');
     const [phone, setPhone] = useState('mg');

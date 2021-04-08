@@ -115,7 +115,7 @@ const Inscription = (props) =>{
                       {activeStep === steps.length ? (
                         <div>
                           <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-                          <div className="form-group text-center mt-5">
+                          <div className="form-group text-center mt-2">
                             <Button onClick={handleReset} variant="contained">Reset</Button>
                           </div>
                         </div>
@@ -128,7 +128,7 @@ const Inscription = (props) =>{
                             ): (
                               <div>
                                 <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-                                <div className="form-group text-center mt-5">
+                                <div className="form-group text-center mt-2">
                                   <Button
                                     disabled={activeStep === 0}
                                     onClick={handleBack}

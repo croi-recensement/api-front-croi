@@ -15,7 +15,7 @@ const Pays = props =>{
 
     const handleChangeProv = (e) => {
         setProvince(e.target.value)
-        if(country == "Madagascar")
+        if(country === "Madagascar")
         setDisabled('')
     }
 
