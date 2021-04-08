@@ -1,50 +1,94 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FormControlLabel } from '@material-ui/core';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Radio from '@material-ui/core/Radio';
 
 const Sport = props =>{
+
+    const [valueSport, setValueSport] = useState('non');
+    const [valueLoisir, setValueLoisir] = useState('non');
+    const [disabledSport, setDisabledSport] = useState('disabled');
+    const [disabledLoisir, setDisabledLoisir] = useState('disabled');
+
+    const handleChangeSport = (e) => {
+        if(e.target.value === 'oui'){
+            setDisabledSport('');
+        }else{
+            setDisabledSport('disabled');
+        }
+        setValueSport(e.target.value);
+    }
+
+    const handleChangeLoisir = (e) => {
+        if(e.target.value === 'oui'){
+            setDisabledLoisir('');
+        }else{
+            setDisabledLoisir('disabled');
+        }
+        setValueLoisir(e.target.value);
+    }
     
     return(
             <>
             <div className="row">
                 <div className="col-md-6">
-                    <div className="form-group">
-                        <div className="form-group">
-                            <label>Quel sport pratiqué vous ?</label>
-                            <input type="text" className="form-control" />
+                    <fieldset className="form-group border p-3">
+                        <legend class="w-auto px-2" style={{fontSize: '16px'}}>Vous pratiquez le Sport ?</legend>
+                        <RadioGroup aria-label="gender" name="gender1" value={valueSport} onChange={handleChangeSport}>
+                            <div className="d-flex justify-content-around">
+                                <FormControlLabel value="oui" control={<Radio />} label="Oui" />
+                                <FormControlLabel value="non" control={<Radio />} label="Non" />
+                            </div>
+                        </RadioGroup>
+                    </fieldset>
+                </div>
+                <div className="col-md-6">
+                    <fieldset className="form-group border p-3">
+                        <legend class="w-auto px-2" style={{fontSize: '16px'}}>Vous avez du loisir ?</legend>
+                        <RadioGroup aria-label="gender" name="gender1" value={valueLoisir} onChange={handleChangeLoisir}>
+                            <div className="d-flex justify-content-around">
+                                <FormControlLabel value="oui" control={<Radio />} label="Oui" />
+                                <FormControlLabel value="non" control={<Radio />} label="Non" />
+                            </div>
+                        </RadioGroup>
+                    </fieldset>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-md-6">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="form-group">
+                                <label>Quel sport pratiqué vous ?</label>
+                                <input type="text" className="form-control" disabled={disabledSport}/>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="form-group">
+                                <label>Quel est la fréquence ?</label>
+                                <input type="text" className="form-control" disabled={disabledSport}/>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-6">
                     <div className="form-group">
-                        <div className="form-group">
-                            <label>Quel est la fréquence ?</label>
-                            <input type="text" className="form-control" />
-                        </div>
+                        <label>Quel est votre loisir ?</label>
+                        <input type="text" className="form-control" disabled={disabledLoisir}/>
                     </div>
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-6">
                     <div className="form-group">
-                        <div className="form-group">
-                            <label>Quel est votre loisir ?</label>
-                            <input type="text" className="form-control" />
-                        </div>
+                        <label>Année pour sport</label>
+                        <input type="number" className="form-control" disabled={disabledSport}/>
                     </div>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-6">
                     <div className="form-group">
-                        <div className="form-group">
-                            <label>Dans quel club vous joué ?</label>
-                            <input type="text" className="form-control" />
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-4">
-                    <div className="form-group">
-                        <div className="form-group">
-                            <label>En quel année vous commencé ?</label>
-                            <input type="text" className="form-control" />
-                        </div>
+                        <label>Année pour loisir</label>
+                        <input type="number" className="form-control" disabled={disabledLoisir}/>
                     </div>
                 </div>
             </div>

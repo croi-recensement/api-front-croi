@@ -27,13 +27,21 @@ const Pays = props =>{
 
     }
 
+    const handleChangeCom = () => {
+        
+    }
+
+    const handleChangeDist = () =>{
+        
+    }
+
     const provinces = getProvince(country);
     const regions = getRegion(province);
     
     return(
             <>
             <div className="row">
-                <div className="col-md-3">
+                <div className="col-md-2">
                     <div className="form-group">
                         <label>Pays</label>
                         <select className="form-control" onChange={handleChangeContr}>
@@ -44,7 +52,7 @@ const Pays = props =>{
                         </select>
                     </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-2">
                     <div className="form-group">
                         <label>Province</label>
                         <select className="form-control" onChange={handleChangeProv}>
@@ -55,7 +63,7 @@ const Pays = props =>{
                         </select>
                     </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-2">
                     <div className="form-group">
                         <label>Région</label>
                         <select className="form-control" onChange={handleChangeReg} disabled = {disabled}>
@@ -66,7 +74,25 @@ const Pays = props =>{
                         </select>
                     </div>
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-2">
+                    <div className="form-group">
+                        <label>District</label>
+                        <select className="form-control" onChange={handleChangeDist} disabled = {disabled}>
+                            <option value="">Selectionner un disctrict</option>
+                                
+                        </select>
+                    </div>
+                </div>
+                <div className="col-md-2">
+                    <div className="form-group">
+                        <label>Commune</label>
+                        <select className="form-control" onChange={handleChangeCom} disabled = {disabled}>
+                            <option value="">Selectionner un commune</option>
+                                
+                        </select>
+                    </div>
+                </div>
+                <div className="col-md-2">
                     <div className="form-group">
                         <label>Quartier</label>
                         <select className="form-control" onChange={handleChangeQuart} disabled = {disabled}>

@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
+import { FormControlLabel } from '@material-ui/core';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import  Radio from '@material-ui/core/Radio';
 import Pays from './Pays';
 
 const Logement = props =>{
 
     const [errorMessageEmail, setErrorMessageEmail] = useState('');
+    const [valueProps, setValueProps] = useState('non');
+    const [valueMais, setValueMais] = useState('non');
+    const [disabled, setDisabled] = useState('disabled');
 
     const checkEmail = (email) =>{
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -19,85 +25,78 @@ const Logement = props =>{
         }
     }
 
+    const handleChangeProps = (e) => {
+        setValueProps(e.target.value)
+    }
+    
+    const handleChangeMais = (e) => {
+        if(e.target.value === 'non'){
+            setDisabled('disabled');
+        }else{
+            setDisabled('');
+        }
+        setValueMais(e.target.value);
+    }
+
     return(
             <>
             <div className="row">
                 <div className="col-md-4">
                     <div className="form-group">
-                        <div className="form-group">
-                            <label>Adresse Pérmanente</label>
-                            <input type="text" className="form-control" onChange={handleChange} />
-                        </div>
+                        <label>Adresse Pérmanente</label>
+                        <input type="text" className="form-control" onChange={handleChange} />
                     </div>
                 </div>
                 <div className="col-md-4">
                     <div className="form-group">
-                        <div className="form-group">
-                            <label>Adresse Temporaire</label>
-                            <input type="text" className="form-control" onChange={handleChange} />
-                        </div>
+                        <label>Adresse Temporaire</label>
+                        <input type="text" className="form-control" onChange={handleChange} />
                     </div>
                 </div>
                 <div className="col-md-4">
                     <div className="form-group">
-                        <div className="form-group">
-                            <label>Votre Adresse Email</label>
-                            <input type="text" className="form-control" onChange={(e) => handleChange(e.target.value)} />
-                            <p className="text-primary">{errorMessageEmail}</p>
-                        </div>
+                        <label>Votre Adresse Email</label>
+                        <input type="text" className="form-control" onChange={(e) => handleChange(e.target.value)} />
+                        <p className="text-primary">{errorMessageEmail}</p>
                     </div>
                 </div>
                 
             </div>
             <div className="row">
                 <div className="col-md-6">
-                    <div className="form-group">
-                        <fieldset className="form-group border p-3">
-                            <legend class="w-auto px-2" style={{fontSize: '16px'}}>Vous avez une maison alloué ?</legend>
-                            <div className="row d-flex justify-content-around">
-                                <div className="col-md-2">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" />
-                                            Oui
-                                        </label>
-                                    </div>
-                                </div>
-                                <div className="col-md-2">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" />
-                                            Non
-                                        </label>
-                                    </div>
-                                </div>
+                    <fieldset className="form-group border p-3">
+                        <legend className="w-auto px-2" style={{fontSize: '16px'}}>Vous êtes propriétaire ?</legend>
+                        <RadioGroup aria-label="gender" name="gender1" value={valueProps} onChange={handleChangeProps}>
+                            <div className="d-flex justify-content-around">
+                                <FormControlLabel value="oui" control={<Radio />} label="Oui" />
+                                <FormControlLabel value="non" control={<Radio />} label="Non" />
                             </div>
-                        </fieldset>
+                        </RadioGroup>
+                    </fieldset>
+                </div>
+                <div className="col-md-6">
+                    <fieldset className="form-group border p-3">
+                        <legend class="w-auto px-2" style={{fontSize: '16px'}}>Vous avez une maison alloué ?</legend>
+                        <RadioGroup aria-label="gender" name="gender1" value={valueMais} onChange={handleChangeMais}>
+                            <div className="d-flex justify-content-around">
+                                <FormControlLabel value="oui" control={<Radio />} label="Oui" />
+                                <FormControlLabel value="non" control={<Radio />} label="Non" />
+                            </div>
+                        </RadioGroup>
+                    </fieldset>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-md-6">
+                    <div className="form-group">
+                        <label>Montant loyé</label>
+                        <input type="number" className="form-control" onChange={handleChange} disabled={disabled}/>
                     </div>
                 </div>
                 <div className="col-md-6">
                     <div className="form-group">
-                        <fieldset className="form-group border p-3">
-                            <legend class="w-auto px-2" style={{fontSize: '16px'}}>Vous êtes propriétaire ?</legend>
-                            <div className="row d-flex justify-content-around">
-                                <div className="col-md-2">
-                                    <div className="form-check">
-                                        <label className="form-check-label">
-                                            <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" />
-                                            Oui
-                                        </label>
-                                    </div>
-                                </div>
-                                <div className="col-md-2">
-                                    <div className="form-check">
-                                        <label className="form-check-label">
-                                            <input type="radio" className="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" />
-                                            Non
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
+                        <label>Montant Syndic</label>
+                        <input type="number" className="form-control" onChange={handleChange} disabled={disabled}/>
                     </div>
                 </div>
             </div>

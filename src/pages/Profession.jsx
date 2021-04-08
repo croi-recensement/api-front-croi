@@ -1,6 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { FormControlLabel } from '@material-ui/core';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Radio from '@material-ui/core/Radio';
 
 const Commerce = props =>{
+
+    const [valueProf, setValueProf] = useState('commerce');
+
+    const handleChangeProf = (e) => {
+        setValueProf(e.target.value);
+    }
     
     return(
             <>
@@ -8,7 +17,7 @@ const Commerce = props =>{
                 <div className="col-md-3">
                     <div className="form-group">
                         <div className="form-group">
-                            <label>Quel est votre domaine d'activité ?</label>
+                            <label>Dmaine d'activité ?</label>
                             <input type="text" className="form-control" />
                         </div>
                     </div>
@@ -16,7 +25,7 @@ const Commerce = props =>{
                 <div className="col-md-3">
                     <div className="form-group">
                         <div className="form-group">
-                            <label>Vos salaire ?</label>
+                            <label>Salaire</label>
                             <input type="text" className="form-control" />
                         </div>
                     </div>
@@ -24,7 +33,7 @@ const Commerce = props =>{
                 <div className="col-md-3">
                     <div className="form-group">
                         <div className="form-group">
-                            <label>votre prime</label>
+                            <label>Prime</label>
                             <input type="text" className="form-control" />
                         </div>
                     </div>
@@ -32,8 +41,8 @@ const Commerce = props =>{
                 <div className="col-md-3">
                     <div className="form-group">
                         <div className="form-group">
-                            <label>Vous payé le loyé</label>
-                            <input type="text" className="form-control" />
+                            <label>Loyé</label>
+                            <input type="text" className="form-control" disabled="disabled"/>
                         </div>
                     </div>
                 </div>
@@ -43,48 +52,15 @@ const Commerce = props =>{
                     <div className="form-group">
                         <fieldset className="form-group border p-3">
                         <legend class="w-auto px-2" style={{fontSize: '16px'}}>Vous êtes ?</legend>
-                        <div className="row">
-                            <div className="col-md-2">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" />
-                                        Commerce
-                                    </label>
-                                </div>
+                        <RadioGroup aria-label="gender" name="gender1" value={valueProf} onChange={handleChangeProf}>
+                            <div className="d-flex justify-content-around">
+                                <FormControlLabel value="commerce" control={<Radio />} label="Commerce" />
+                                <FormControlLabel value="importateur" control={<Radio />} label="Importateur/Exportateur" />
+                                <FormControlLabel value="trader" control={<Radio />} label="Trader" />
+                                <FormControlLabel value="revendeur" control={<Radio />} label="Revendeur" />
+                                <FormControlLabel value="prestation" control={<Radio />} label="Préstation de Sérvice" />
                             </div>
-                            <div className="col-md-3">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" />
-                                        Importateur/Exportateur
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="col-md-2">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" />
-                                        Trader
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="col-md-2">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" />
-                                        Revendeur
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" />
-                                        Presta de Service
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                        </RadioGroup>
                         </fieldset>
                     </div>
                 </div>

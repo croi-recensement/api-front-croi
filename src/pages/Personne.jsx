@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FormControlLabel } from '@material-ui/core';
+import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -11,7 +13,7 @@ const Personne = (props) =>{
 
     const [data, setData] = useState("");
     const [startDate, setStartDate] = useState(new Date());
-    const [selectedValue, setSelectedValue] = useState('M');
+    const [valueSexe, setValueSexe] = useState('M');
     const [phone, setPhone] = useState('mg');
     const [errorMessagePassport, setErrorMessagePassport] = useState('');
     const [errorMessageNumber, setErrorMessageNumber] = useState('');
@@ -23,19 +25,26 @@ const Personne = (props) =>{
         return numb.test(number);
     }
 
-    const handleChange = (index) => {
-        //passport
+    const handleChangePassport = (index) => {
         if (validator && validator.isPassportNumber(index,'IN')) {
             setErrorMessagePassport('');
         }else{
             setErrorMessagePassport('Is Invalid Passport Number')
         }
-        //cin
+    }
+
+    const handleChangeNumber = (index) => {
         if(checkNumber(index)){
             setErrorMessageNumber('')
         }else{
             setErrorMessageNumber('invalid numéro')
         }
+    }
+
+    const handleChange = (index) => {}
+
+    const handleChangeSexe = (e) => {
+        setValueSexe(e.target.value)
     }
 
     return(
@@ -94,20 +103,12 @@ const Personne = (props) =>{
                 <div className="col-md-3">
                     <div className="form-group">
                         <div><label>Sexe</label></div>
-                        <Radio
-                            checked={selectedValue === 'M'}
-                            onChange={handleChange}
-                            value="Masculin"
-                            name="radio-button-demo"
-
-                        />Masculin
-                        <Radio
-                            checked={selectedValue === 'F'}
-                            onChange={handleChange}
-                            value="Feminin"
-                            name="radio-button-demo"
-                            
-                        />Féminin
+                        <RadioGroup aria-label="gender" name="gender1" value={valueSexe} onChange={handleChangeSexe}>
+                            <div className="d-flex justify-content-around">
+                                <FormControlLabel value="M" control={<Radio />} label="Masculin" />
+                                <FormControlLabel value="F" control={<Radio />} label="Féminin" />
+                            </div>
+                        </RadioGroup>
                     </div>
                 </div>
                 <div className="col-md-3">
@@ -146,14 +147,14 @@ const Personne = (props) =>{
                 <div className="col-md-3">
                     <div className="form-group">
                         <label>N° du Passport</label>
-                        <input type="text" className="form-control" onChange={(e) => handleChange(e.target.value)} />
+                        <input type="text" className="form-control" onChange={(e) => handleChangePassport(e.target.value)} />
                         <p className="text-primary">{errorMessagePassport}</p>
                     </div>
                 </div>
                 <div className="col-md-3">
                     <div className="form-group">
                         <label>N° CIN</label>
-                        <input type="text" className="form-control" onChange={(e) => handleChange(e.target.value)} />
+                        <input type="text" className="form-control" onChange={(e) => handleChangeNumber(e.target.value)} />
                         <p className="text-primary">{errorMessageNumber}</p>
                     </div>
                 </div>
