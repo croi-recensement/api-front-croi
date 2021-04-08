@@ -1,6 +1,6 @@
 {
   "name": "croi-front",
-  "homepage": "http://croirec.wattec.mg/",
+  "homepage": "http://croirec.wattec.mg/croirec",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
