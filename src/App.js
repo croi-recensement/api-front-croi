@@ -7,15 +7,15 @@ import './styles/App.css';
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
       <div className="container pt-5">
           <Switch>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/inscription" component={Inscription} />
+            <Route path="/" exact ><HomePage /></Route>
+            <Route path="/inscription"><Inscription /></Route>
           </Switch>
       </div>
-  </Router>);
+  </>);
 }
 
 export default App;

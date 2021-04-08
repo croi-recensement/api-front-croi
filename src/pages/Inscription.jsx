@@ -47,7 +47,6 @@ const Inscription = (props) =>{
     const classes = useStyles();
     const [activeStep, setActiveStep] = useState(0);
     const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
     const timer = React.useRef();
 
     useEffect(() => {
@@ -58,10 +57,8 @@ const Inscription = (props) =>{
 
     const handleNext = () => {
       if (!loading) {
-        setSuccess(false);
         setLoading(true);
         timer.current = window.setTimeout(() => {
-          setSuccess(true);
           setLoading(false);
         }, 2000);
       }
