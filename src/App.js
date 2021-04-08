@@ -9,12 +9,12 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <main className="container pt-5">
+      <div className="container pt-5">
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/inscription" component={Inscription} />
           </Switch>
-      </main>
+      </div>
   </Router>);
 }
 
