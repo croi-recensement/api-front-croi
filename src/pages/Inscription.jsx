@@ -118,7 +118,7 @@ const Inscription = (props) =>{
                         </div>
                       ): (
                           <div>
-                            { steps[activeStep] === 'Tabligh'  ? (
+                            { (steps[activeStep] === 'Tabligh' || steps[activeStep] === 'Santé') ? (
                                 <div>
                                   <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
                                 </div>

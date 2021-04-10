@@ -1,0 +1,394 @@
+[
+    {
+        "id": 1,
+        "categorie": "cardiovasculaires",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "infarctus du myocarde",
+                "questions":[{}]
+            },
+            {
+                "nom": "angine de poitrine",
+                "questions": [{}]
+            },
+            {
+                "nom": "insuffisance cardiaque",
+                "questions": [{}]
+            },
+            {
+                "nom": "phlébite",
+                "questions":[{}]
+            },
+            {
+                "nom": "embolie pulmonaire",
+                "questions": [{}]
+            },
+            {
+                "nom": "hypertension artérielle",
+                "questions": [{}]
+            },
+            {
+                "nom": "hypercholestérolémie",
+                "questions": [{}]
+            },
+            {
+                "nom": "troubles du rythme cardiaque",
+                "questions": [{}]
+            },
+            {
+                "nom": "valvulopathie",
+                "questions": [{}]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "categorie": "cancers",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "cancers du cerveau",
+                "questions":[{}]
+            },
+            {
+                "nom": " cancer du col de l’utérus",
+                "questions": [{}]
+            },
+            {
+                "nom": "cancer du colon",
+                "questions": [{}]
+            },
+            {
+                "nom": "cancer de l’estomac",
+                "questions":[{}]
+            },
+            {
+                "nom": "cancer du foie",
+                "questions": [{}]
+            },
+            {
+                "nom": "cancer des os",
+                "questions": [{}]
+            },
+            {
+                "nom": "cancer du poumon",
+                "questions": [{}]
+            },
+            {
+                "nom": "cancer  du rein",
+                "questions": [{}]
+            },
+            {
+                "nom": "cancer du sein",
+                "questions": [{}]
+            },
+            {
+                "nom": "cancer de la thyroïde",
+                "questions": [{}]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "categorie": "endocriniennes",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "diabète",
+                "questions":[{}]
+            },
+            {
+                "nom": "hyperthyroïdie",
+                "questions": [{}]
+            },
+            {
+                "nom": "hypothyroïdie",
+                "questions": [{}]
+            },
+            {
+                "nom": "obésité",
+                "questions":[{}]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "categorie": "respiratoires",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "asthme",
+                "questions":[{}]
+            },
+            {
+                "nom": "bronchite",
+                "questions": [{}]
+            },
+            {
+                "nom": "emphysème",
+                "questions": [{}]
+            },
+            {
+                "nom": "apnée du sommeil",
+                "questions":[{}]
+            },
+            {
+                "nom": "pneumopathie",
+                "questions":[{}]
+            },
+            {
+                "nom": "rhinite",
+                "questions":[{}]
+            },
+            {
+                "nom": "sinusite",
+                "questions":[{}]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "categorie": "digestives",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "ulcère gastro duodénal",
+                "questions":[{}]
+            },
+            {
+                "nom": "gastrite",
+                "questions": [{}]
+            },
+            {
+                "nom": "reflux gastro œsophagien",
+                "questions": [{}]
+            },
+            {
+                "nom": "côlon irritable",
+                "questions":[{}]
+            },
+            {
+                "nom": " maladie cœliaque",
+                "questions":[{}]
+            },
+            {
+                "nom": " rectocolite hémorragique",
+                "questions":[{}]
+            },
+            {
+                "nom": "  cirrhose",
+                "questions":[{}]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "categorie": "rhumatologiques",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "arthrose",
+                "questions":[{}]
+            },
+            {
+                "nom": "hernie discale",
+                "questions": [{}]
+            },
+            {
+                "nom": "sciatique",
+                "questions": [{}]
+            },
+            {
+                "nom": "lombalgie",
+                "questions":[{}]
+            },
+            {
+                "nom": "tendinite",
+                "questions":[{}]
+            },
+            {
+                "nom": "ostéoporose",
+                "questions":[{}]
+            },
+            {
+                "nom": " scoliose",
+                "questions":[{}]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "categorie": "neurologiques",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "sclérose en plaques",
+                "questions":[{}]
+            },
+            {
+                "nom": "céphalées",
+                "questions": [{}]
+            },
+            {
+                "nom": " épilepsie",
+                "questions": [{}]
+            },
+            {
+                "nom": "d’Alzheimer",
+                "questions":[{}]
+            },
+            {
+                "nom": "démence",
+                "questions":[{}]
+            },
+            {
+                "nom": "algie vasculaire de la face",
+                "questions":[{}]
+            },
+            {
+                "nom": "accident vasculaire cérébral",
+                "questions":[{}]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "categorie": "gynécologiques, urinaires ou rénales",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "endometriose",
+                "questions":[{}]
+            },
+            {
+                "nom": "insuffisance rénale",
+                "questions": [{}]
+            },
+            {
+                "nom": "incontinence urinaire",
+                "questions": [{}]
+            },
+            {
+                "nom": "fibrome utérin",
+                "questions":[{}]
+            },
+            {
+                "nom": "kyste ovarien",
+                "questions":[{}]
+            },
+            {
+                "nom": "trouble de la fertilité",
+                "questions":[{}]
+            },
+            {
+                "nom": "calculs rénaux",
+                "questions":[{}]
+            },
+            {
+                "nom": "adénome de la prostate",
+                "questions":[{}]
+            },
+            {
+                "nom": "trouble érectile",
+                "questions":[{}]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "categorie": "peau",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "acné",
+                "questions":[{}]
+            },
+            {
+                "nom": "eczéma",
+                "questions": [{}]
+            },
+            {
+                "nom": "urticaire",
+                "questions": [{}]
+            },
+            {
+                "nom": "psoriasis",
+                "questions":[{}]
+            },
+            {
+                "nom": "vitiligo",
+                "questions":[{}]
+            },
+            {
+                "nom": "zona",
+                "questions":[{}]
+            },
+            {
+                "nom": "herpès",
+                "questions":[{}]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "categorie": "yeux",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "glaucome",
+                "questions":[{}]
+            },
+            {
+                "nom": "cataracte",
+                "questions": [{}]
+            },
+            {
+                "nom": "rétinopathie",
+                "questions": [{}]
+            },
+            {
+                "nom": "troubles de la vision",
+                "questions":[{}]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "categorie": "hématologiques ",
+        "type": "Chronique",
+        "maladie": [
+            {
+                "nom": "leucémie",
+                "questions":[{}]
+            },
+            {
+                "nom": "lymphome",
+                "questions": [{}]
+            },
+            {
+                "nom": "déficit immunitaire",
+                "questions": [{}]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "categorie": "aaaaa ",
+        "type": "Ponctuelle",
+        "maladie": [
+            {
+                "nom": "leucémie",
+                "questions":[{}]
+            },
+            {
+                "nom": "lymphome",
+                "questions": [{}]
+            },
+            {
+                "nom": "déficit immunitaire",
+                "questions": [{}]
+            }
+        ]
+    }
+]
