@@ -21,7 +21,6 @@ const Steppers =(props) => {
 
     const classes = useStyles();
     const steps = props.getSteps();
-
     return(
         <>
         <div className="row">

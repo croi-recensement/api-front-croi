@@ -40,6 +40,8 @@ const Logement = props =>{
 
     return(
             <>
+        <fieldset className="form-group border p-5">
+            <legend className="w-auto px-2" style={{fontSize: '16px'}}>LOGEMENTS</legend>
             <div className="row">
                 <div className="col-md-4">
                     <div className="form-group">
@@ -101,6 +103,7 @@ const Logement = props =>{
                 </div>
             </div>
             <Pays />
+            </fieldset>
         </>
     );
 }

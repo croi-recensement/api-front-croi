@@ -13,6 +13,8 @@ const Commerce = props =>{
     
     return(
             <>
+            <fieldset className="form-group border p-5">
+            <legend className="w-auto px-2" style={{fontSize: '16px'}}>PROFESSION</legend>
             <div className="row">
                 <div className="col-md-3">
                     <div className="form-group">
@@ -53,7 +55,7 @@ const Commerce = props =>{
                         <fieldset className="form-group border p-3">
                         <legend class="w-auto px-2" style={{fontSize: '16px'}}>Vous êtes ?</legend>
                         <RadioGroup aria-label="gender" name="gender1" value={valueProf} onChange={handleChangeProf}>
-                            <div className="d-flex justify-content-around">
+                            <div className="d-flex justify-content-around listeProf">
                                 <FormControlLabel value="commerce" control={<Radio />} label="Commerce" />
                                 <FormControlLabel value="importateur" control={<Radio />} label="Importateur/Exportateur" />
                                 <FormControlLabel value="trader" control={<Radio />} label="Trader" />
@@ -65,6 +67,7 @@ const Commerce = props =>{
                     </div>
                 </div>
             </div>
+            </fieldset>
         </>
     );
 }

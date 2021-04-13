@@ -5,6 +5,8 @@ const Education = props =>{
     
     return(
             <>
+            <fieldset className="form-group border p-5">
+            <legend className="w-auto px-2" style={{fontSize: '16px'}}>EDUCATION</legend>
             <div className="row">
                 <div className="col-md-3">
                     <div className="form-group">
@@ -74,6 +76,7 @@ const Education = props =>{
                 </div>
             </div>
             <Pays />
+            </fieldset>
         </>
     );
 }

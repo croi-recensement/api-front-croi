@@ -1,6 +1,11 @@
 import React from 'react';
 
 const Tabligh = props =>{
+
+    const handleResponse = (e) => {
+        e.preventDefault();
+        props.handleNext()
+    }
     
     return(
         <div className="container">
@@ -8,7 +13,7 @@ const Tabligh = props =>{
                 <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
-                            <p className="">1- Quel est le prophète le plus cité dans le coran ?</p>
+                            <div className="">1- Quel est le prophète le plus cité dans le coran ?</div>
                         </div>
                         <div>
                             <input type="radio" /> Issa عليه السلام (Jesus)
@@ -27,7 +32,7 @@ const Tabligh = props =>{
                 <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
-                            <p className="">6- Combien y-a-t-il de mois sacrés dans le calendrier islamique ?</p>
+                            <div className="">6- Combien y-a-t-il de mois sacrés dans le calendrier islamique ?</div>
                         </div>
                         <div>
                             <input type="radio" /> 5
@@ -49,7 +54,7 @@ const Tabligh = props =>{
                 <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
-                            <p className="">2- Quels sont les mois sacrés ?</p>
+                            <div className="">2- Quels sont les mois sacrés ?</div>
                         </div>
                         <div>
                             <input type="radio" /> Ramadan, Dhul Hijah, Safar et Chawwal
@@ -68,7 +73,7 @@ const Tabligh = props =>{
                 <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
-                            <p className="">7- Quelle est la seule sourate qui ne commence pas par la formule de « Basmala » ?</p>
+                            <div className="">7- Quelle est la seule sourate qui ne commence pas par la formule de « Basmala » ?</div>
                         </div>
                         <div>
                             <input type="radio" /> Sourate Al Baqarah (La vache)
@@ -89,7 +94,7 @@ const Tabligh = props =>{
                 <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
-                            <p className="">3- Comment s’appelle le peuple qui a accueilli le prophète ﷺ à Médine suite à son départ de la Mecque ?</p>
+                            <div className="">3- Comment s’appelle le peuple qui a accueilli le prophète ﷺ à Médine suite à son départ de la Mecque ?</div>
                         </div>
                         <div>
                             <input type="radio" /> Les Quraych
@@ -105,7 +110,7 @@ const Tabligh = props =>{
                 <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
-                            <p className="">8- Les anges sont faits </p>
+                            <div className="">8- Les anges sont faits </div>
                         </div>
                         <div>
                             <input type="radio" /> De lumière
@@ -123,7 +128,7 @@ const Tabligh = props =>{
                 <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
-                            <p className="">4- D’après le prophète ﷺ, quel est le meilleure don qu'Allah a offert à l’Homme ?</p>
+                            <div className="">4- D’après le prophète ﷺ, quel est le meilleure don qu'Allah a offert à l’Homme ?</div>
                         </div>
                         <div>
                             <input type="radio" /> L'amour
@@ -142,7 +147,7 @@ const Tabligh = props =>{
                 <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
-                            <p className="">9- Lors du Hajj- pèlerinage- à quel endroit le pèlerin doit-il obligatoirement passer plusieurs nuits ? </p>
+                            <div className="">9- Lors du Hajj- pèlerinage- à quel endroit le pèlerin doit-il obligatoirement passer plusieurs nuits ? </div>
                         </div>
                         <div>
                             <input type="radio" /> Muzdalifa
@@ -163,7 +168,7 @@ const Tabligh = props =>{
                 <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
-                            <p className="">5- Lors du voyage nocturne du prophète ﷺ aux cieux, combien de prières ont été initialement prescrites aux musulmans ?</p>
+                            <div className="">5- Lors du voyage nocturne du prophète ﷺ aux cieux, combien de prières ont été initialement prescrites aux musulmans ?</div>
                         </div>
                         <div>
                             <input type="radio" /> 55
@@ -182,7 +187,7 @@ const Tabligh = props =>{
                 <div className="col-md-6 col-sm-12">
                     <div className="d-flex align-self-auto flex-column">
                         <div>
-                            <p className="">10- Quel est le seul compagnon dont le nom est cité dans le Coran ? </p>
+                            <div className="">10- Quel est le seul compagnon dont le nom est cité dans le Coran ? </div>
                         </div>
                         <div>
                             <input type="radio" /> Abu Huraira
@@ -200,7 +205,7 @@ const Tabligh = props =>{
                 </div>
             </div>
             <div className="text-center m-5">
-                <button type="button" className="btn btn-primary btn-circle btn-xl">Réponse</button>
+                <button type="button" className="btn btn-primary btn-circle btn-xl" onClick={handleResponse}>Réponse</button>
             </div>
         </div>
     );

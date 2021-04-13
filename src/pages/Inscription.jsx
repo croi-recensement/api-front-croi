@@ -6,7 +6,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { purple } from '@material-ui/core/colors';
 
 import Steppers from '../components/Steppers';
-import Personne from '../pages/Personne';
+import Personne from './person/Personne';
 import Logement from '../pages/Logement';
 import Education from '../pages/Education';
 import Sante from '../pages/Sante';
@@ -19,10 +19,6 @@ import Finished from '../pages/Finished';
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-  },
-  instructions: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1),
   },
   backButton: {
     marginRight: theme.spacing(8),
@@ -85,7 +81,7 @@ const Inscription = (props) =>{
           case 2:
             return <Education handleNext={handleNext}/>
           case 3:
-              return <Sante />
+              return <Sante handleNext={handleNext} />
           case 4:
               return <Sport />
           case 5:
@@ -93,7 +89,7 @@ const Inscription = (props) =>{
           case 6:
             return <Profession />
           case 7:
-            return <Tabligh  />
+            return <Tabligh  handleNext={handleNext} />
           default:
             return <Finished />
         }
@@ -102,16 +98,15 @@ const Inscription = (props) =>{
 
     return(
           <>
-            <div className={classes.root}>
-              <div className="container-fluid mb-5 col-md-12 col-xs-6">
+            <div className={classes.root} style={{marginBottom: "5%"}}>
+              <div className="container col-md-12 col-xs-6 col-sm-4">
                   <Steppers getSteps={getSteps} activeStep={activeStep} />
               </div>
-
-                  <form className="bg-success container-fluid p-5 ">
+                  <form className="p-5 " style={{backgroundColor:"#0FD711"}}>
                     <fieldset>
                       {activeStep === steps.length ? (
                         <div>
-                          <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                          <Typography>{getStepContent(activeStep)}</Typography>
                           <div className="form-group text-center mt-2">
                             <Button onClick={handleReset} variant="contained">Reset</Button>
                           </div>
@@ -120,7 +115,7 @@ const Inscription = (props) =>{
                           <div>
                             { (steps[activeStep] === 'Tabligh' || steps[activeStep] === 'Santé') ? (
                                 <div>
-                                  <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                                  <Typography>{getStepContent(activeStep)}</Typography>
                                 </div>
                             ): (
                               <div>

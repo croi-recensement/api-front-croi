@@ -7,10 +7,29 @@
   pointer-events: none;
 }
 
+.react-datepicker-wrapper {
+  display: block !important;
+}
+
+.react-tel-input .form-control{
+  width:none !important;
+}
+
+._2iA8p44d0WZ-WqRBGcAuEV{
+  min-height: 35px;
+  background-color: #fff;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.listeProf {
+  display: flex;
+  flex-direction: column !important;
 }
 
 @media screen and (max-width: 600px){
@@ -25,9 +44,6 @@
   .MuiPaper-root.MuiStepper-root.MuiStepper-horizontal.MuiStepper-alternativeLabel.MuiPaper-elevation0{
     display: none;
   }
-  .react-tel-input .form-control{
-    width: 235px;
-  }
   .MuiButton-root{
     font-size: 12px !important;
   }
@@ -37,7 +53,35 @@
   legend.w-auto.px-2{
     font-size: 10px !important;
   }
+  .p-5{
+    padding: 1rem !important;
+  }
+  .question{
+    font-size: 12px;
+    line-height: 5px;
+  }
+  .btnOui{
+    font-size: 10px;
+  }
+  .field{
+   border: none;
+  }
+  select option, option[type="value"]{
+    font-size: 10px;
+  }
+  .form-control{
+    font-size: 10px;
+  }
 }
+
+@media screen and (max-width: 900px){
+  .form-group.birthday {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
 
 .App-header {
   background-color: #282c34;

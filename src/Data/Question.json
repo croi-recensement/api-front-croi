@@ -144,6 +144,35 @@
             {
                 "nom": "sinusite",
                 "questions":[{}]
+            },
+            {
+                "nom": "covid19",
+                "questions": [
+                    {
+                        "id": 0,
+                        "quest": "Comment peut-on savoir que les vaccins contre la COVID-19 sont sans danger ?"
+                    },
+                    {
+                        "id": 1,
+                        "quest": "Quels sont les effets secondaires des vaccins anti-COVID-19 ?"
+                    },
+                    {
+                        "id": 2,
+                        "quest": "Quel est le lien entre les vaccins anti-COVID-19 et les réactions allergiques ?"
+                    },
+                    {
+                        "id": 3,
+                        "quest": "Une personne peut-elle être infectée bien qu’ayant été vaccinée contre la COVID-19 ?"
+                    },
+                    {
+                        "id": 4,
+                        "quest": "La vaccination contre la COVID-19 est-elle sans danger pour les femmes qui sont enceintes, qui envisagent une grossesse ou qui allaitent ?"
+                    },
+                    {
+                        "id": 5,
+                        "quest": "Que fera l’OMS pour veiller à la bonne mise en œuvre de la surveillance de la sécurité vaccinale et des interventions lors de la vaccination contre la COVID-19 ?"
+                    }
+                ]
             }
         ]
     },
@@ -391,4 +420,5 @@
             }
         ]
     }
+
 ]

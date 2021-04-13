@@ -1,13 +1,12 @@
 import React, { useEffect, useState }  from 'react';
 import { FormControlLabel } from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Pays from './Pays';
 import Question from '../Data/Question.json'
+import Sliders from '../components/Slider';
 
 const useStyles = makeStyles(theme => ({
 
@@ -17,7 +16,7 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-const Sante = () => {
+const Sante = (props) => {
 
     const classes = useStyles();
     const [valueMal, setValueMal] = useState('non');
@@ -26,10 +25,13 @@ const Sante = () => {
     const [dataMaladies, setDataMaladies] = useState(Question);
     const [dataTypes, setDataTypes] = useState([]);
     const [dataCats, setDataCats] = useState('');
+    const [malad, setMalad] = useState('');
+    const [cat, setCat] = useState('');
 
 
     const [disabledEvac, setDisabledEvac] = useState('disabled');
     const [disabledChg, setDisabledChg] = useState('disabled');
+    const [choise, setChoise] = useState(true)
 
     const handleChangeMaladie = (e) => {
         if(e.target.value === 'oui'){
@@ -57,19 +59,26 @@ const Sante = () => {
         let tabs = [];
         dataMaladies.filter((maladie) =>{
             if(maladie.type === index){
-                tabs.push(<option key={maladie.id} value={maladie.categorie}>{maladie.categorie}</option>);
+                tabs.push(<option value={maladie.categorie}>{maladie.categorie}</option>);
             }
         })
         setDataTypes(tabs);
     }
 
+    const handleChangeTypMaladie = (e) => {
+        setMalad(e.target.value);
+        setChoise('')
+    }
+
     const handleChangeCat = (index) => {
         let tabs = [];
+        setCat(index)
         dataMaladies.map((maladie) => {
             if(maladie.categorie === index){
                 const maladies = maladie.maladie;
+                tabs.splice(0, tabs.length);
                 maladies.map((nom) =>{
-                    tabs.push(<option key={maladie.id} value={nom.nom}>{nom.nom}</option>);
+                    tabs.push(<option value={nom.nom}>{nom.nom}</option>);
                 })
             }
         });
@@ -78,12 +87,16 @@ const Sante = () => {
 
     return(
         <>
+        
+        <div className="container">
         {valueQuest !== 'oui' ? (
+            <fieldset className="form-group border p-5">
+            <legend className="w-auto px-2" style={{fontSize: '16px'}}>SANTE</legend>
             <FormControl>
                 <div className="row">
                     <div className="col-md-3">
                         <div className="form-group">
-                            <label>Type de maladie vous avez ?</label>
+                            <label>Type de maladie</label>
                             <select className="form-control" onChange={e => handleChangeType(e.target.value)}>
                                 <option>Selectionnez le type</option>
                                 <option value="Chronique">Chronique</option>
@@ -104,7 +117,7 @@ const Sante = () => {
                     <div className="col-md-3">
                         <div className="form-group">
                             <label>Maladie :</label>
-                            <select className="form-control">
+                            <select className="form-control" onChange={handleChangeTypMaladie}>
                                 <option>Selectionnez le type</option>
                                 { dataCats }
                                 <option>Autre</option>
@@ -182,39 +195,21 @@ const Sante = () => {
                             <legend className="w-auto px-2" style={{fontSize: '16px'}}>Voulez-vous répondre aux question suivantes ? </legend>
                             <RadioGroup aria-label="gender" name="gender1" value={valueQuest} onChange={handleChangeQuest}>
                                 <div className="d-flex justify-content-around">
-                                    <FormControlLabel value="oui" control={<Radio />} label="Oui" />
+                                    <FormControlLabel value="oui" control={<Radio />} label="Oui" disabled={choise}/>
                                     <FormControlLabel value="non" control={<Radio />} label="Non" />
                                 </div>
                             </RadioGroup>
                         </fieldset>
                     </div>
                 </div>
-            </FormControl>):(
-            <div className="container">
+            </FormControl>
+            </fieldset>):(
                 <div className="row">
-                    <div className="col-md-12 text-center text-white mb-5">
-                        <h1>Quelle est le</h1>
-                    </div>
-                    <div className="col-md-12 text-center ">
-                        <div >
-                            <Button
-                                color="primary"
-                                variant="contained"
-                                className={classes.backButton}
-                            >
-                                OUI
-                            </Button>
-                            <Button
-                                color="primary"
-                                variant="contained"
-                            >
-                                NON
-                            </Button>
-                        </div>
-                    </div>
-                </div>
+                    <Sliders maladie={malad} categorie={cat} handleNext={props.handleNext}/>
+                </div>         
+            )}
             </div>
-        )}
+            
         </>
     );
 }

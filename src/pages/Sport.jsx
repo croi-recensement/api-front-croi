@@ -30,6 +30,8 @@ const Sport = props =>{
     
     return(
             <>
+            <fieldset className="form-group border p-5">
+            <legend className="w-auto px-2" style={{fontSize: '16px'}}>SPORT</legend>
             <div className="row">
                 <div className="col-md-6">
                     <fieldset className="form-group border p-3">
@@ -92,6 +94,7 @@ const Sport = props =>{
                     </div>
                 </div>
             </div>
+            </fieldset>
         </>
     );
 }
