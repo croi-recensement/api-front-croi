@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Pays from './Pays';
 
 const Education = props =>{
+
+    const [hierarchie, setHierarchie] = useState(localStorage.getItem('pere') ? localStorage.getItem('pere') : localStorage.getItem('mere'));
+    const [iterationVal, setIterationVal] = useState(1);
+
+    const submitValidate = (e) => {
+        e.preventDefault();
+        setIterationVal(iterationVal + 1);
+        switch(iterationVal){
+            case 1:
+                setHierarchie(localStorage.getItem('mere'))
+                break;
+            case 2:
+                setHierarchie(localStorage.getItem('enfant'))
+                break
+            default:
+                props.handleNext()
+        }   
+    }
     
     return(
             <>
             <fieldset className="form-group border p-5">
-            <legend className="w-auto px-2" style={{fontSize: '16px'}}>EDUCATION</legend>
+            <legend className="w-auto px-2" style={{fontSize: '16px'}}>EDUCATION ({hierarchie})</legend>
             <div className="row">
                 <div className="col-md-3">
                     <div className="form-group">
@@ -77,6 +95,9 @@ const Education = props =>{
             </div>
             <Pays />
             </fieldset>
+            <div className="row d-flex justify-content-center">
+                <button onClick={submitValidate} className="btn btn-primary btnEnfants">VALIDER</button>
+            </div>
         </>
     );
 }

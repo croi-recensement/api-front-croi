@@ -11,6 +11,8 @@ const Commerce = props =>{
         setValueProf(e.target.value);
     }
     
+    const submitValidate = () => {}
+    
     return(
             <>
             <fieldset className="form-group border p-5">
@@ -68,6 +70,9 @@ const Commerce = props =>{
                 </div>
             </div>
             </fieldset>
+            <div className="row d-flex justify-content-center">
+                <button onClick={submitValidate} className="btn btn-primary btnEnfants">VALIDER</button>
+            </div>
         </>
     );
 }

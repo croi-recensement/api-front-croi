@@ -12,7 +12,7 @@
 }
 
 .react-tel-input .form-control{
-  width:none !important;
+  width: inherit !important;
 }
 
 ._2iA8p44d0WZ-WqRBGcAuEV{
@@ -30,6 +30,12 @@
 .listeProf {
   display: flex;
   flex-direction: column !important;
+}
+
+.btnEnfants{
+  position: absolute;
+  bottom: inherit;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 600px){
@@ -56,10 +62,6 @@
   .p-5{
     padding: 1rem !important;
   }
-  .question{
-    font-size: 12px;
-    line-height: 5px;
-  }
   .btnOui{
     font-size: 10px;
   }
@@ -71,6 +73,12 @@
   }
   .form-control{
     font-size: 10px;
+  }
+  .btnEnfants{
+    position: absolute;
+    bottom: inherit;
+    font-size: 8px;
+    margin-top: -12px;
   }
 }
 
@@ -105,4 +113,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* css modal */
+.modal {
+  font-size: 12px;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
 }

@@ -63,12 +63,17 @@ const Inscription = (props) =>{
         setActiveStep(prevActiveStep => prevActiveStep + 1);
     }
 
+    const handleReste = () => {
+      setActiveStep(3);
+    }
+
     const handleBack = () =>{
       setActiveStep(prevActiveStep => prevActiveStep - 1);
     }
   
     const handleReset = () =>{
       setActiveStep(0);
+      localStorage.clear();
     }
 
     const getStepContent = (stepIndex) => {
@@ -83,7 +88,7 @@ const Inscription = (props) =>{
           case 3:
               return <Sante handleNext={handleNext} />
           case 4:
-              return <Sport />
+              return <Sport handleNext={handleNext} />
           case 5:
             return <Social />
           case 6:
@@ -91,7 +96,7 @@ const Inscription = (props) =>{
           case 7:
             return <Tabligh  handleNext={handleNext} />
           default:
-            return <Finished />
+            return <Finished handleReset={handleReset} />
         }
       }
 
@@ -113,14 +118,9 @@ const Inscription = (props) =>{
                         </div>
                       ): (
                           <div>
-                            { (steps[activeStep] === 'Tabligh' || steps[activeStep] === 'Santé') ? (
-                                <div>
-                                  <Typography>{getStepContent(activeStep)}</Typography>
-                                </div>
-                            ): (
                               <div>
                                 <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-                                <div className="form-group text-center mt-2">
+                                <div className="form-group d-flex justify-content-around btnHide">
                                   <Button
                                     disabled={activeStep === 0}
                                     onClick={handleBack}
@@ -130,14 +130,12 @@ const Inscription = (props) =>{
                                   >
                                     Retour
                                   </Button>
-                                  <Button variant="contained" color="secondary" onClick={handleNext}>
-                                      {activeStep === steps.length - 1 ? 'fini !!!' : 'Etape ' + (activeStep + 1)}
+                                  <Button variant="contained" color="primary" onClick={handleNext}>
+                                      {activeStep === steps.length - 1 ? 'fini !!!' : 'Passer >> ' + (activeStep + 1)}
                                       {loading && <CircularProgress size={24} className={classes.buttonProgress} color="secondary"/>}
                                   </Button>
-                                  
                                 </div>
                               </div>
-                            )}
                           </div>
                       )}
                     </fieldset>    

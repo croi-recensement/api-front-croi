@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <Navbar />
-    <BrowserRouter basename='/croirec/'>
+    <BrowserRouter basename='/croirec/FO/'>
       <div className="container pt-5">
         <Route path="/" exact ><HomePage /></Route>
         <Route path="/inscription"><Inscription /></Route>

@@ -9,6 +9,8 @@ const Sport = props =>{
     const [valueLoisir, setValueLoisir] = useState('non');
     const [disabledSport, setDisabledSport] = useState('disabled');
     const [disabledLoisir, setDisabledLoisir] = useState('disabled');
+    const [hierarchie, setHierarchie] = useState(localStorage.getItem('pere') ? localStorage.getItem('pere') : localStorage.getItem('mere'));
+    const [iterationVal, setIterationVal] = useState(1);
 
     const handleChangeSport = (e) => {
         if(e.target.value === 'oui'){
@@ -27,11 +29,26 @@ const Sport = props =>{
         }
         setValueLoisir(e.target.value);
     }
+
+   const submitValidate = (e) => {
+        e.preventDefault();
+        setIterationVal(iterationVal + 1);
+        switch(iterationVal){
+            case 1:
+                setHierarchie(localStorage.getItem('mere'))
+                break;
+            case 2:
+                setHierarchie(localStorage.getItem('enfant'))
+                break
+            default:
+                props.handleNext()
+        }   
+    }
     
     return(
             <>
             <fieldset className="form-group border p-5">
-            <legend className="w-auto px-2" style={{fontSize: '16px'}}>SPORT</legend>
+            <legend className="w-auto px-2" style={{fontSize: '16px'}}>SPORT ({hierarchie})</legend>
             <div className="row">
                 <div className="col-md-6">
                     <fieldset className="form-group border p-3">
@@ -95,6 +112,9 @@ const Sport = props =>{
                 </div>
             </div>
             </fieldset>
+            <div className="row d-flex justify-content-center">
+                <button onClick={submitValidate} className="btn btn-primary btnEnfants">VALIDER</button>
+            </div>
         </>
     );
 }

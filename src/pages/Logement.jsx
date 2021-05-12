@@ -38,6 +38,10 @@ const Logement = props =>{
         setValueMais(e.target.value);
     }
 
+    const submitValidate = () => {
+        
+    }
+
     return(
             <>
         <fieldset className="form-group border p-5">
@@ -104,6 +108,9 @@ const Logement = props =>{
             </div>
             <Pays />
             </fieldset>
+            <div className="row d-flex justify-content-center align-self-center">
+                <button onClick={submitValidate} className="btn btn-primary btnEnfants">VALIDER</button>
+            </div>
         </>
     );
 }

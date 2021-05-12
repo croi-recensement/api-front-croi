@@ -1,6 +1,10 @@
 import React from 'react';
 
 const Social = props =>{
+
+    const submitValidate = () => {
+        
+    }
     
     return(
             <>
@@ -11,7 +15,7 @@ const Social = props =>{
                     <div className="form-group">
                         <div className="form-group">
                             <label>Aide pour éducation</label>
-                            <input type="text" className="form-control" />
+                            
                         </div>
                     </div>
                 </div>
@@ -75,6 +79,9 @@ const Social = props =>{
                 </div>
             </div>
             </fieldset>
+            <div className="row d-flex justify-content-center">
+                <button onClick={submitValidate} className="btn btn-primary btnEnfants">VALIDER</button>
+            </div>
         </>
     );
 }

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Question from '../Data/Question.json';
+import Typography from '@material-ui/core/Typography';
+
+import Sante from '../pages/Sante';
 
 const dataQuestion = (props) =>{
     let tabs = [];
@@ -27,6 +30,7 @@ const Sliders = (props) => {
   const questions = dataQuestion(props);
   const [count, setCount] = useState(1);
   const [result, setResult] = useState('');
+  const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
     if(questions[0] !== "" && result === ""){
@@ -47,10 +51,9 @@ const Sliders = (props) => {
       }
     })
     if((questions.length - 1) < count ){
-      props.handleNext()
+      
     }
   }
-
 
   return (
     <div className="containers">
@@ -58,8 +61,8 @@ const Sliders = (props) => {
         <legend class="w-auto px-2" style={{fontSize: '16px'}}>QUESTIONS</legend>
         <style>{cssstyle}</style>
         <Slider {...settings}>
-              <div>
-                <span className="question">{result}</span>
+              <div className="question">
+                <span>{result}</span>
               </div>
         </Slider>
           <div className="d-flex justify-content-around mt-5">
@@ -77,17 +80,16 @@ const cssstyle = `
   padding: 0px 40px 40px 40px;
   width: 100%;
 }
-span{
-    color: #fff;
-    font-size: 20px;
-    line-height: 30px;
-    margin: 10px;
-    padding: 2%;
-    position: relative;
+.question{
     text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+.btnHide{
+  display: none !important;
 }
 button{
-  marginRight: 20px,
+  marginRight: 20px;
 }
 .slick-next:before, .slick-prev:before {
     color: #000;
