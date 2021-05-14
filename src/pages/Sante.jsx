@@ -160,7 +160,7 @@ const Sante = (props) => {
                 <legend className="w-auto px-2" style={{fontSize: '16px'}}>SANTE ({hierarchie})</legend>
                 <FormControl>
                     <div className="row">
-                        <div className="col-md-3">
+                        <div className="col-md-2">
                             <div className="form-group">
                                 <label>Type de maladie</label>
                                 <select className="form-control" onChange={e => handleChangeType(e.target.value)}>
@@ -190,10 +190,19 @@ const Sante = (props) => {
                                 </select>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-md-2">
                             <div className="form-group">
                                 <label>Autre</label>
                                 <input type="text" className="form-control" disabled/>
+                            </div>
+                        </div>
+                        <div className="col-md-2">
+                            <div className="form-group">
+                                <label>Groupe Sanguin</label>
+                                <select className="form-control" onChange={handleChangeTypMaladie}>
+                                    <option>Selectionnez le type</option>  
+                                    <option>A+</option>
+                                </select>
                             </div>
                         </div>
                     </div>
